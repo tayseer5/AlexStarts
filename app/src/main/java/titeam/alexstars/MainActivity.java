@@ -1,24 +1,17 @@
 package titeam.alexstars;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
-import android.widget.Toast;
+
+import titeam.alexstars.sidemenu.testFragment;
+import titeam.alexstars.sidemenu.testTabFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 //Closing drawer on item click
                 drawerLayout.closeDrawers();
 
+                //init fragment manager object
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()){
 
@@ -63,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_first_fragment:
                         //Toast.makeText(getApplicationContext(),"Inbox Selected",Toast.LENGTH_SHORT).show();
                         testFragment fragment = new testFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.flContent,fragment);
                         fragmentTransaction.commit();
                         return true;
@@ -71,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     // For rest of the options we just show a toast on click
 
                     case R.id.nav_second_fragment:
+                        testTabFragment testTabFragment = new testTabFragment();
+                        fragmentTransaction.replace(R.id.flContent,testTabFragment);
+                        fragmentTransaction.commit();
                         //Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.nav_third_fragment:

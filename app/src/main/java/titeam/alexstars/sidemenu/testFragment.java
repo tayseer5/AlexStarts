@@ -1,7 +1,7 @@
-package titeam.alexstars.tabviewfragment;
-
+package titeam.alexstars.sidemenu;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import titeam.alexstars.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Created by ITI on 12/10/2016.
  */
-public class movie extends Fragment {
 
+public class testFragment extends Fragment {
 
-    public movie() {
+    public testFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,6 @@ public class movie extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.new_content_layout, container, false);
+        return inflater.inflate(R.layout.test_layout, container, false);
     }
-
 }

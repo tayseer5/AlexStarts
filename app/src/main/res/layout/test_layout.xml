@@ -6,9 +6,9 @@
         android:layout_height="wrap_content"
         android:text="INBOX"
         android:padding="8dp"
-        android:textColor="#fff"
-        android:background="#673AB7"
-        android:textSize="28sp"
+        android:textColor="@color/textColorPrimary"
+        android:background="@color/colorPrimary"
+        android:textSize="@dimen/text_font_size"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
