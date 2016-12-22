@@ -1,7 +1,5 @@
 package titeam.alexstars.sidemenu;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,17 +11,15 @@ import android.view.ViewGroup;
 
 import titeam.alexstars.R;
 import titeam.alexstars.tabviewfragment.ViewPagerAdapter;
-import titeam.alexstars.tabviewfragment.movie;
-import titeam.alexstars.tabviewfragment.music;
 
 
-public class testTabFragment extends Fragment {
+public class NewsTabFragment extends Fragment {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    public testTabFragment() {
+    public NewsTabFragment() {
         // Required empty public constructor
     }
 
@@ -31,7 +27,7 @@ public class testTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_test_tab, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_new_tab, container, false);
         toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -58,7 +54,7 @@ public class testTabFragment extends Fragment {
         }
     }
     private void setupViewPager(ViewPager viewPager,LayoutInflater inflater) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(inflater);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
 
         viewPager.setAdapter(adapter);
     }

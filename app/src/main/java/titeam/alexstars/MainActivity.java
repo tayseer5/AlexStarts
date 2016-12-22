@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import titeam.alexstars.sidemenu.testFragment;
-import titeam.alexstars.sidemenu.testTabFragment;
+import titeam.alexstars.sidemenu.NewsTabFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     // For rest of the options we just show a toast on click
 
                     case R.id.nav_second_fragment:
-                        testTabFragment testTabFragment = new testTabFragment();
+                        NewsTabFragment testTabFragment = new NewsTabFragment();
                         fragmentTransaction.replace(R.id.flContent,testTabFragment);
                         fragmentTransaction.commit();
                         //Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
